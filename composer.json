@@ -1,0 +1,25 @@
+{
+	"name": "matheus/loja",
+	"description": "Loja de livros alura",
+	"authors": [
+		{
+			"name": "Matheus Felicio",
+			"email": "matheus@email.com"
+		}
+	],
+	"minimum-stability": "dev",
+
+	"require":
+	{
+		"webcreate/vcs": "dev-master"
+
+	},
+
+    "autoload" :
+    {
+        "psr-4" :
+		{
+			"Store\\": "app/Store"
+		}
+    }
+}
