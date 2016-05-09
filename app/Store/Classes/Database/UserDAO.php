@@ -1,5 +1,8 @@
 <?php namespace Store\Classes\Database;
 
+use Store\Classes\Model\User;
+use Store\Classes\Util\ObjectFactoryService;
+
 class UserDAO
 {
     private $connection;
@@ -13,7 +16,7 @@ class UserDAO
     {
         $user = new User($this->connection, $email, $password);
 
-        $query = "SELECT email FROM usuarios WHERE email='{$user->getEmail()}' AND senha='{$user->getPassword()}'";
+        $query = "SELECT email FROM usuarios WHERE email='{$user->getEmail()}' AND senha='{$user->getPassword()}' LIMIT 1";
 
         $result = mysqli_query($this->connection, $query);
 

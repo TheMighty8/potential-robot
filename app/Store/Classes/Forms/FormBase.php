@@ -12,7 +12,7 @@ namespace Store\Classes\Forms;
 use Store\Interfaces\IForm;
 use Store\Interfaces\IHtmlBuilder;
 
-abstract class FormBase implements IHtmlBuilder, IForm
+abstract class FormBase implements IHtmlBuilder
 {
     protected $action;
     protected $method;

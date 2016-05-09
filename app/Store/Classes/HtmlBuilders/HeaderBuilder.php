@@ -27,7 +27,8 @@ class HeaderBuilder implements IHtmlBuilder
     public function getAsHtml()
     {
         $headerAsHtml =
-            "<head> \n"
+            "<!DOCTYPE html> \n"
+            . "<head> \n"
             ."\t" . "<meta charset='utf-8'> \n"
             ."\t" . "<title> {$this->websiteTitle} </title> \n"
             ."\t" . "<link rel='stylesheet' href='$this->bootstrapCssPath'> \n"

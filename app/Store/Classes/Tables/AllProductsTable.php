@@ -22,7 +22,7 @@ class AllProductsTable extends TableBase implements IHtmlBuilder
     {
         $this->appendToTable("<table class='{$this->class}'> \n");
 
-        $this->appendProductInformationsToTable();
+        $this->appendProductInformationToTable();
 
         $this->appendToTable("</table> \n");
 
@@ -34,7 +34,7 @@ class AllProductsTable extends TableBase implements IHtmlBuilder
         $this->tableHtml .= $content;
     }
 
-    private function appendProductInformationsToTable()
+    private function appendProductInformationToTable()
     {
         $dbConnection = GenericDatabaseOperations::getInstance();
         $productsFromDatabase = $dbConnection->listFromTable('produtos');

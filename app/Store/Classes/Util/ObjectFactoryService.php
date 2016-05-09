@@ -20,7 +20,7 @@ final class ObjectFactoryService
         if (self::$session == null) {
             $session = new SessionHandler();
             $session->start();
-            if ($session->isValid()){
+            if (!$session->isValid(9000)){
                 $session->forget();
             }
             self::$session = &$session;

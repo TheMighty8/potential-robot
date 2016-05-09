@@ -14,10 +14,11 @@ use Store\Classes\Inputs\CheckboxInput;
 use Store\Classes\Inputs\DefaultInput;
 use Store\Classes\Inputs\HiddenInput;
 use Store\Classes\Inputs\SelectInput;
+use Store\Classes\Inputs\TextAreaInput;
 use Store\Interfaces\IForm;
 use Store\Interfaces\IHtmlBuilder;
 
-class InsertUpdateDeleteForm extends FormBase implements IHtmlBuilder, IForm
+class InsertUpdateDeleteForm extends FormBase implements IHtmlBuilder
 {
     private $hiddenIdInput;
     private $nameInput;
@@ -35,7 +36,7 @@ class InsertUpdateDeleteForm extends FormBase implements IHtmlBuilder, IForm
         $this->hiddenIdInput = new HiddenInput($productId);
         $this->nameInput = new DefaultInput('text', 'name', 'form-control');
         $this->priceInput = new DefaultInput('number', 'price', 'form-control');
-        $this->descriptionInput = new textAreaInput('text', 'description', 'form-control');
+        $this->descriptionInput = new TextAreaInput('description', 'form-control');
         $this->conditionInput = new CheckboxInput('checkbox', 'pre-owned', '', $checkboxDefaultCondition);
         $this->categoryInput = new SelectInput('select', 'select');
         $this->submitButtonInput = new ButtonInput('submit', 'create', 'btn btn-success', 'Create');
@@ -58,8 +59,5 @@ class InsertUpdateDeleteForm extends FormBase implements IHtmlBuilder, IForm
             "\t</form>\n";
     }
 
-    public function sendForm(array $information)
-    {
-        // TODO: Implement sendForm() method.
-    }
+   
 }

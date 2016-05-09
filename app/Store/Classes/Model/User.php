@@ -1,5 +1,8 @@
 <?php namespace Store\Classes\Model;
 
+use mysqli;
+use Store\Classes\Util\ObjectFactoryService;
+
 /**
  * Created by PhpStorm.
  * User: Maheus Felicio

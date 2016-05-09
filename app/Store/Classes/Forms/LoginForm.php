@@ -6,7 +6,7 @@ use Store\Classes\Inputs\DefaultInput;
 use Store\Interfaces\IForm;
 use Store\Interfaces\IHtmlBuilder;
 
-class LoginForm implements IForm, IHtmlBuilder
+class LoginForm implements IHtmlBuilder
 {
     private $emailInput;
     private $passwordInput;
@@ -18,12 +18,7 @@ class LoginForm implements IForm, IHtmlBuilder
         $this->method = $method;
         $this->emailInput = new DefaultInput("email", "email", "form-control");
         $this->passwordInput = new DefaultInput("password", "password", "form-control");
-        $this->sendButtonInput = new ButtonInput("submit", "submit", "btn btn-primary", "Login");
-    }
-
-    public function sendForm(array $information)
-    {
-        // TODO: Implement sendForm() method.
+        $this->sendButtonInput = new ButtonInput("submit", "login", "btn btn-primary", "Login");
     }
 
     public function getAsHtml()

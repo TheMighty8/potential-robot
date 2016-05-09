@@ -14,7 +14,7 @@ use Store\Classes\Inputs\HiddenInput;
 use Store\Interfaces\IForm;
 use Store\Interfaces\IHtmlBuilder;
 
-class TableForm extends FormBase implements IHtmlBuilder, IForm
+class TableForm extends FormBase implements IHtmlBuilder
 {
 
     private $removeButton;
@@ -39,9 +39,4 @@ class TableForm extends FormBase implements IHtmlBuilder, IForm
 
         return $formAsHtml;
     }
-
-    public function sendForm(array $information)
-    {
-        // TODO: Implement sendForm() method.
-    }
-}
+ }
