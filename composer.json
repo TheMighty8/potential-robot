@@ -1,25 +1,19 @@
 {
-	"name": "matheus/loja",
-	"description": "Loja de livros alura",
-	"authors": [
-		{
-			"name": "Matheus Felicio",
-			"email": "matheus@email.com"
-		}
-	],
-	"minimum-stability": "dev",
-
-	"require":
-	{
-		"webcreate/vcs": "dev-master"
-
-	},
-
-    "autoload" :
+  "name": "matheus/loja",
+  "description": "Loja de livros alura",
+  "authors": [
     {
-        "psr-4" :
-		{
-			"Store\\": "app/Store"
-		}
+      "name": "Matheus Felicio",
+      "email": "matheus@email.com"
     }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "ezimuel/php-secure-session": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Store\\": "app/Store"
+    }
+  }
 }

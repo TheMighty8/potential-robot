@@ -38,7 +38,7 @@ class FormController
         if ($result == null) :
             return false;
         else:
-            $session->user=$email;
+            $session->insert('user', $email);
             return $result;
         endif;
     }
@@ -47,8 +47,8 @@ class FormController
     {
         $session = ObjectFactoryService::getSession();
 
-        if (isset($session->user)){
-            return $session->insert();
+        if ($session->get('user') != null){
+            return $session->get('user');
         }else{
             header("Location : " . Config::getProjectRootUrl().'app/Layout/message.php');
         }
