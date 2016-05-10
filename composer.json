@@ -9,7 +9,6 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "ezimuel/php-secure-session": "dev-master"
   },
   "autoload": {
     "psr-4": {

@@ -9,8 +9,7 @@
 namespace Store\Classes\Controller;
 
 use Store\Classes\Database\UserDAO;
-use Store\Classes\Util\ObjectFactoryService;
-use Store\Config\Config;
+use Store\Classes\Util\Session\SessionManager;
 
 class FormController
 {
@@ -31,27 +30,24 @@ class FormController
 
     public static function validateLogin($email, $password)
     {
-        $session = ObjectFactoryService::getSession();
         $findUser = new UserDAO();
         $result = $findUser->findUser($email, $password);
-        
+
         if ($result == null) :
             return false;
         else:
-            $session->insert('user', $email);
+            SessionManager::insert('user', $email);
             return $result;
         endif;
     }
 
     public static function validateLoggedInUser()
     {
-        $session = ObjectFactoryService::getSession();
-
-        if ($session->get('user') != null){
-            return $session->get('user');
-        }else{
-            header("Location : " . Config::getProjectRootUrl().'app/Layout/message.php');
+        if (!SessionManager::get('user')) {
+            return SessionManager::get('user');
+        } else {
+            return false;
         }
-        
+
     }
 }

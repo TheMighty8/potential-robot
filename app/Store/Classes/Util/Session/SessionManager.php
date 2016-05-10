@@ -8,49 +8,30 @@
 
 namespace Store\Classes\Util\Session;
 
-use stackSess;
 
 class SessionManager
 {
-    private $session;
-
-    public function __construct()
+    public static function insert($name, $value)
     {
-        $this->session = new stackSess();
-    }
-    
-    public  function start()
-    {
-        ini_set('session.save_handler', 'files');
-
-        session_set_save_handler($this->session, true);
-
-        session_save_path(__DIR__ . 'sessions');
-
-        $this->session->start();
-
-        if (!$this->session->isValid(50)) {
-            $this->session->destroy();
-        }
+        session_start();
+        $_SESSION[$name] = $value;
     }
 
-    public  function insert($name, $value)
+    public static function get($name)
     {
-        $this->session->put($name, $value);
+        session_start();
+        return $_SESSION[$name];
     }
 
-    public function get($name)
+    public static function remove($name)
     {
-       return $this->session->get($name);
+        session_start();
+        unset($_SESSION[$name]);
     }
 
-    public  function remove($name, $value)
+    public static function forget()
     {
-        $this->session->remove($name, $value);
-    }
-
-    public  function forget()
-    {
-        $this->session->forget();
+        session_start();
+        session_destroy();
     }
 }

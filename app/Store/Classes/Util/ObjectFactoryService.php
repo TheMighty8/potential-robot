@@ -1,6 +1,5 @@
 <?php namespace Store\Classes\Util;
 use mysqli;
-use Store\Classes\Util\Session\SessionManager;
 use Store\Config\config;
 
 /**
@@ -11,20 +10,8 @@ use Store\Config\config;
  */
 final class ObjectFactoryService
 {
-    private static $session;
     private static $mysqli;
     private static $config;
-
-    public static function getSession() 
-    {
-        if (self::$session == null) {
-            $session = new SessionManager();
-            $session->start();
-            self::$session = &$session;
-        }
-
-        return self::$session;
-    }
 
     public static function getDb()
     {
