@@ -34,6 +34,9 @@ class NavbarBuilder implements IHtmlBuilder
         $this->appendToNavbar("\t \t \t<ul class='nav navbar-nav'> \n");
         $this->appendPagesToNavbar();
         $this->appendToNavbar("\t \t \t</ul> \n");
+        $this->appendToNavbar("\t \t \t<ul class='nav navbar-nav navbar-right'> \n");
+        $this->appendToNavbar("\t\t\t\t<li> <a href='#'><span class=\"glyphicon glyphicon-log-out\"></span> Logout </a> </li>\n");
+        $this->appendToNavbar("\t \t \t</ul> \n");
         $this->appendToNavbar("\t \t </div> \n");
         $this->appendToNavbar("\t </div> \n");
         $this->appendToNavbar("</div> \n");

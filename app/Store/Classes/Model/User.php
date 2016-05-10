@@ -1,7 +1,6 @@
 <?php namespace Store\Classes\Model;
 
 use mysqli;
-use Store\Classes\Util\ObjectFactoryService;
 
 /**
  * Created by PhpStorm.
@@ -13,14 +12,12 @@ class User
 {
     private $email;
     private $password;
-    private $session;
 
     function __construct(mysqli $connection = null, $email = null, $password = null)
     {
         $this
             ->setEmail(mysqli_real_escape_string($connection, $email))
-            ->setPassword(mysqli_real_escape_string($connection, $password))
-            ->session = ObjectFactoryService::getSession();
+            ->setPassword(mysqli_real_escape_string($connection, $password));
     }
 
     public function getEmail()

@@ -1,4 +1,5 @@
 <?php namespace Store\Classes\HtmlBuilders;
+use Store\Interfaces\IHtmlBuilder;
 
 /**
  * Created by PhpStorm.
@@ -6,11 +7,18 @@
  * Date: 27/04/2016
  * Time: 11:13
  */
-class HtmlMessageBuilder
+class HtmlMessageBuilder implements IHtmlBuilder
 {
-    public static function ShowMessage($message, $type)
+    private $message;
+
+    public function BuildMessage($message, $type)
     {
-        return "\t<h2 class='alert alert-{$type}'>{$message}<h2> \n";
+        $this->message = "\t<h2 class='alert alert-{$type}'>{$message}<h2> \n";
+    }
+
+    public function getAsHtml()
+    {
+        return $this->message;
     }
 }
 

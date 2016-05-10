@@ -43,11 +43,17 @@ class FormController
 
     public static function validateLoggedInUser()
     {
-        if (!SessionManager::get('user')) {
-            return SessionManager::get('user');
+        if (SessionManager::get('user') != null) {
+            return true;
         } else {
             return false;
         }
+    }
 
+    public static function varifyUserPermissions()
+    {
+        if (!self::validateLoggedInUser()){
+            header('Location: ' . 'http://localhost/loja-alura');
+        }
     }
 }
