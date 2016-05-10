@@ -48,7 +48,7 @@ class FormController
         $session = ObjectFactoryService::getSession();
 
         if (isset($session->user)){
-            return $session->user;
+            return $session->insert();
         }else{
             header("Location : " . Config::getProjectRootUrl().'app/Layout/message.php');
         }
