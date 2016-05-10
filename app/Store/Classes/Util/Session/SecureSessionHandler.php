@@ -1,4 +1,7 @@
 <?php
+namespace Store\Classes\Util\Session;
+
+use SessionHandler;
 
 class SecureSessionHandler extends SessionHandler {
 

@@ -1,6 +1,6 @@
 <?php namespace Store\Classes\Util;
 use mysqli;
-use Store\Classes\Util\Session\SessionHandler;
+use Store\Classes\Util\Session\SecureSessionHandler;
 use Store\Config\config;
 
 /**
@@ -18,7 +18,7 @@ final class ObjectFactoryService
     public static function getSession() 
     {
         if (self::$session == null) {
-            $session = new SessionHandler();
+            $session = new SecureSessionHandler();
             $session->start();
             if (!$session->isValid(9000)){
                 $session->forget();

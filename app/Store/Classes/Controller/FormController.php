@@ -10,6 +10,7 @@ namespace Store\Classes\Controller;
 
 use Store\Classes\Database\UserDAO;
 use Store\Classes\Util\ObjectFactoryService;
+use Store\Config\Config;
 
 class FormController
 {
@@ -45,9 +46,12 @@ class FormController
     public static function validateLoggedInUser()
     {
         $session = ObjectFactoryService::getSession();
+
         if (isset($session->user)){
             return $session->user;
+        }else{
+            header("Location : " . Config::getProjectRootUrl().'app/Layout/message.php');
         }
-        return false;
+        
     }
 }
