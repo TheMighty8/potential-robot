@@ -7,8 +7,11 @@
  */
 require "../../../vendor/autoload.php";
 
+use Store\Classes\Controller\LoginController;
 use Store\Classes\HtmlBuilders\HtmlBuilder;
 use Store\Classes\HtmlElements\Forms\InsertUpdateDeleteForm;
+
+LoginController::verifyLoginPermissions();
 
 $insertProductForm = new InsertUpdateDeleteForm('placeholder.php', 'POST', '', 'false');
 $insertProductForm = $insertProductForm->getAsHtml();

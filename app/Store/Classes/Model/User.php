@@ -12,7 +12,7 @@ class User
 {
     private $email;
     private $password;
-
+    
     function __construct(mysqli $connection = null, $email = null, $password = null)
     {
         $this

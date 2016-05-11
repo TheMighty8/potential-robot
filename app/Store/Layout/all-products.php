@@ -2,11 +2,12 @@
 require "../../../vendor/autoload.php";
 
 
-use Store\Classes\Controller\FormController;
+use Store\Classes\Controller\LoginController;
 use Store\Classes\HtmlBuilders\HtmlBuilder;
 use Store\Classes\HtmlElements\Tables\AllProductsTable;
 
-FormController::varifyUserPermissions();
+
+LoginController::verifyLoginPermissions();
 
 $table = new AllProductsTable("table table-hover table-stripped");
 $table = $table->getAsHtml();

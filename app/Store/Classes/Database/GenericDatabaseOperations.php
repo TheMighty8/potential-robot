@@ -16,7 +16,7 @@ class GenericDatabaseOperations
 
     public function __construct()
     {
-        $this->connection = ObjectFactoryService::getDb();
+        $this->connection = ObjectFactoryService::getDbConnection();
         $this->preparedStatement = GenericPreparedStatementHandler::getInstance();
     }
 

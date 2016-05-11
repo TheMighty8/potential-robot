@@ -13,7 +13,7 @@ class HtmlMessageBuilder implements IHtmlBuilder
 
     public function BuildMessage($message, $type)
     {
-        $this->message = "\t<h2 class='alert alert-{$type}'>{$message}<h2> \n";
+        $this->message = "\t<h2 class='text-center center alert alert-{$type}'>{$message}<h2> \n";
     }
 
     public function getAsHtml()

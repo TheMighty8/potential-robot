@@ -1,6 +1,7 @@
 <?php namespace Store\Classes\Util;
 use mysqli;
-use Store\Config\config;
+use mysqli_sql_exception;
+use Store\Config\Config;
 
 /**
  * Created by PhpStorm.
@@ -13,7 +14,7 @@ final class ObjectFactoryService
     private static $mysqli;
     private static $config;
 
-    public static function getDb()
+    public static function getDbConnection()
     {
         if (self::$mysqli == null) {
             try {

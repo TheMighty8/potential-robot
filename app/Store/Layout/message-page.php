@@ -3,10 +3,7 @@ namespace Store\Layout;
 
 require "../../../vendor/autoload.php";
 
-use Store\Classes\HtmlBuilders\HtmlBuilder;
+use Store\Classes\Controller\PageInformationController;
 
-$informationMessage = HtmlMessageBuilder::ShowMessage("You do not have permission for this feature :(", "danger");
-
-$message = new HtmlBuilder([$informationMessage]);
-
-echo $message;
+$informationMessage = PageInformationController::getInformationMessage();
+echo $informationMessage->getAsHtml();

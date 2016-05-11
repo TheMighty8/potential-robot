@@ -8,6 +8,7 @@
 
 namespace Store\Classes\HtmlBuilders;
 
+use Store\Classes\Util\Session\SessionManager;
 use Store\Config\Config;
 use Store\Interfaces\IHtmlBuilder;
 
@@ -34,9 +35,9 @@ class NavbarBuilder implements IHtmlBuilder
         $this->appendToNavbar("\t \t \t<ul class='nav navbar-nav'> \n");
         $this->appendPagesToNavbar();
         $this->appendToNavbar("\t \t \t</ul> \n");
-        $this->appendToNavbar("\t \t \t<ul class='nav navbar-nav navbar-right'> \n");
-        $this->appendToNavbar("\t\t\t\t<li> <a href='#'><span class=\"glyphicon glyphicon-log-out\"></span> Logout </a> </li>\n");
-        $this->appendToNavbar("\t \t \t</ul> \n");
+        if (SessionManager::get('user') != null){
+            $this->appendSideMenuItensToNavbar();
+        }
         $this->appendToNavbar("\t \t </div> \n");
         $this->appendToNavbar("\t </div> \n");
         $this->appendToNavbar("</div> \n");
@@ -57,5 +58,13 @@ class NavbarBuilder implements IHtmlBuilder
                 $this->appendToNavbar($html);
             }
         }
+    }
+
+    private function appendSideMenuItensToNavbar()
+    {
+        $logoutPageUrl = Config::getProjectRootUrl() . 'Layout' . '/logout' . '.php';
+        $this->appendToNavbar("\t \t \t<ul class='nav navbar-nav navbar-right'> \n");
+        $this->appendToNavbar("\t\t\t\t<li> <a href='{$logoutPageUrl}'><span class=\"glyphicon glyphicon-log-out\"></span> Logout </a> </li>\n");
+        $this->appendToNavbar("\t \t \t</ul> \n");
     }
 }
