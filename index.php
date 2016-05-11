@@ -2,9 +2,9 @@
 require_once 'vendor/autoload.php';
 
 use Store\Classes\Controller\FormController;
-use Store\Classes\Forms\LoginForm;
 use Store\Classes\HtmlBuilders\HtmlBuilder;
 use Store\Classes\HtmlBuilders\HtmlMessageBuilder;
+use Store\Classes\HtmlElements\Forms\LoginForm;
 use Store\Classes\Util\Session\SessionManager;
 
 if (FormController::verifyPostParameters($_POST)) {

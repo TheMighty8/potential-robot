@@ -1,9 +1,7 @@
-<?php namespace Store\Classes\Forms;
+<?php namespace Store\Classes\HtmlElements\Forms;
 
-use Store\Classes\Forms\FormsTrait;
-use Store\Classes\Inputs\ButtonInput;
-use Store\Classes\Inputs\DefaultInput;
-use Store\Interfaces\IForm;
+use Store\Classes\HtmlElements\Inputs\ButtonInput;
+use Store\Classes\HtmlElements\Inputs\DefaultInput;
 use Store\Interfaces\IHtmlBuilder;
 
 class LoginForm implements IHtmlBuilder
@@ -25,11 +23,11 @@ class LoginForm implements IHtmlBuilder
     {
         $formAsHtml =
             "\t<form action='$this->action'  method='$this->method'>\n" .
-                "\t\t<table class='table'>\n"
-                    . $this->emailInput->getAsHtml() . " \n"
-                    . $this->passwordInput->getAsHtml() . "\n"
-                    . $this->sendButtonInput->getAsHtml() . "\n"
-                . "\t\t</table>\n" .
+            "\t\t<table class='table'>\n"
+            . $this->emailInput->getAsHtml() . " \n"
+            . $this->passwordInput->getAsHtml() . "\n"
+            . $this->sendButtonInput->getAsHtml() . "\n"
+            . "\t\t</table>\n" .
             "\t</form>\n";
 
         return $formAsHtml;

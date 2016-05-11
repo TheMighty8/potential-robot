@@ -6,11 +6,10 @@
  * Time: 11:24
  */
 
-namespace Store\Classes\Forms;
+namespace Store\Classes\HtmlElements\Forms;
 
-
-use Store\Classes\Inputs\ButtonTableInput;
-use Store\Classes\Inputs\HiddenInput;
+use Store\Classes\HtmlElements\Inputs\ButtonTableInput;
+use Store\Classes\HtmlElements\Inputs\HiddenInput;
 use Store\Interfaces\IForm;
 use Store\Interfaces\IHtmlBuilder;
 

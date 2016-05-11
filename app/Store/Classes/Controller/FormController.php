@@ -10,6 +10,7 @@ namespace Store\Classes\Controller;
 
 use Store\Classes\Database\UserDAO;
 use Store\Classes\Util\Session\SessionManager;
+use Store\Config\Config;
 
 class FormController
 {
@@ -53,7 +54,8 @@ class FormController
     public static function varifyUserPermissions()
     {
         if (!self::validateLoggedInUser()){
-            header('Location: ' . 'http://localhost/loja-alura');
+            header(Config::getIndexLocationStringUrl());
+            SessionManager::insert('danger', 'You don\'t have permission to use this feature');
         }
     }
 }

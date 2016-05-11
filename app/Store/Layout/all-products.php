@@ -4,9 +4,9 @@ require "../../../vendor/autoload.php";
 
 use Store\Classes\Controller\FormController;
 use Store\Classes\HtmlBuilders\HtmlBuilder;
-use Store\Classes\Tables\AllProductsTable;
+use Store\Classes\HtmlElements\Tables\AllProductsTable;
 
-$ronaldo = FormController::varifyUserPermissions();
+FormController::varifyUserPermissions();
 
 $table = new AllProductsTable("table table-hover table-stripped");
 $table = $table->getAsHtml();

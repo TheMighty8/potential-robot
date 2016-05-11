@@ -6,8 +6,7 @@
  * Time: 10:16
  */
 
-namespace Store\Classes\Tables;
-
+namespace Store\Classes\HtmlElements\Tables;
 
 use Store\Interfaces\IHtmlBuilder;
 

@@ -6,16 +6,14 @@
  * Time: 09:22
  */
 
-namespace Store\Classes\Forms;
+namespace Store\Classes\HtmlElements\Forms;
 
-
-use Store\Classes\Inputs\ButtonInput;
-use Store\Classes\Inputs\CheckboxInput;
-use Store\Classes\Inputs\DefaultInput;
-use Store\Classes\Inputs\HiddenInput;
-use Store\Classes\Inputs\SelectInput;
-use Store\Classes\Inputs\TextAreaInput;
-use Store\Interfaces\IForm;
+use Store\Classes\HtmlElements\Inputs\ButtonInput;
+use Store\Classes\HtmlElements\Inputs\CheckboxInput;
+use Store\Classes\HtmlElements\Inputs\DefaultInput;
+use Store\Classes\HtmlElements\Inputs\HiddenInput;
+use Store\Classes\HtmlElements\Inputs\SelectInput;
+use Store\Classes\HtmlElements\Inputs\TextAreaInput;
 use Store\Interfaces\IHtmlBuilder;
 
 class InsertUpdateDeleteForm extends FormBase implements IHtmlBuilder

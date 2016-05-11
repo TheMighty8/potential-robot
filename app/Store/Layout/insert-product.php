@@ -7,8 +7,8 @@
  */
 require "../../../vendor/autoload.php";
 
-use Store\Classes\Forms\InsertUpdateDeleteForm;
 use Store\Classes\HtmlBuilders\HtmlBuilder;
+use Store\Classes\HtmlElements\Forms\InsertUpdateDeleteForm;
 
 $insertProductForm = new InsertUpdateDeleteForm('placeholder.php', 'POST', '', 'false');
 $insertProductForm = $insertProductForm->getAsHtml();

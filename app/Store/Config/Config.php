@@ -9,6 +9,7 @@ Class Config
 {
     private static $projectRootUrl = "http://localhost/loja-alura/app/Store/";
     private static $projectSiteName = "Loja";
+    private static $indexLocationStringUrl = "Location: " . "http://localhost/loja-alura";
 
     public static function getSystemPagesArrayAsNameUrl()
     {
@@ -44,5 +45,10 @@ Class Config
     public static function getProjectRootUrl()
     {
         return self::$projectRootUrl;
+    }
+
+    public static function getIndexLocationStringUrl()
+    {
+        return self::$indexLocationStringUrl;
     }
 }

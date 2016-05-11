@@ -6,8 +6,8 @@
  * Time: 08:52
  */
 
-namespace Store\Classes\Inputs;
 
+namespace Store\Classes\HtmlElements\Inputs;
 
 use Store\Interfaces\IHtmlBuilder;
 

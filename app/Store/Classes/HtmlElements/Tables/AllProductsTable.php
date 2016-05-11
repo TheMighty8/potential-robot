@@ -6,11 +6,10 @@
  * Time: 10:17
  */
 
-namespace Store\Classes\Tables;
-
+namespace Store\Classes\HtmlElements\Tables;
 
 use Store\Classes\Database\GenericDatabaseOperations;
-use Store\Classes\Forms\TableForm;
+use Store\Classes\HtmlElements\Forms\TableForm;
 use Store\Classes\Model\Product;
 use Store\Interfaces\IHtmlBuilder;
 
