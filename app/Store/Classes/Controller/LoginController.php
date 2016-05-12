@@ -11,7 +11,6 @@ namespace Store\Classes\Controller;
 use Store\Classes\Database\UserDAO;
 use Store\Classes\Model\User;
 use Store\Classes\Util\Session\SessionManager;
-use Store\Config\Config;
 
 class LoginController
 {
@@ -20,13 +19,16 @@ class LoginController
         $findUser = new UserDAO();
         $result = $findUser->findUser($user);
 
-        if ($result == false) :
-            return false;
-        else:
-            SessionManager::insert('success', 'Login realizado com sucesso');
+        if ($result == false) {
+            $message = 'Login failure, check your credentials';
+            PageInformationController::setInformationMessage($message);
+            PageInformationController::setInformationMessageType('danger');
+            echo PageInformationController::getInformationMessage()->getAsHtml();
+            die();
+        }
+        else{
             SessionManager::insert('user', $user->getEmail());
-            return $result;
-        endif;
+        }
     }
 
     public static function validateLoggedInUser()
@@ -38,11 +40,13 @@ class LoginController
         }
     }
 
-    public static function verifyLoginPermissions()
+    public static function verifyLoginPermissions($message, $type)
     {
         if (!LoginController::validateLoggedInUser()){
-            SessionManager::insert('danger', 'You don\'t have permission to use this feature');
-            header(Config::getIndexLocationStringUrl());
+            PageInformationController::setInformationMessage($message);
+            PageInformationController::setInformationMessageType($type);
+            echo PageInformationController::getInformationMessage()->getAsHtml();
+            die();
         }
     }
 }

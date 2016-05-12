@@ -35,9 +35,11 @@ class NavbarBuilder implements IHtmlBuilder
         $this->appendToNavbar("\t \t \t<ul class='nav navbar-nav'> \n");
         $this->appendPagesToNavbar();
         $this->appendToNavbar("\t \t \t</ul> \n");
-        if (SessionManager::get('user') != null){
-            $this->appendSideMenuItensToNavbar();
-        }
+
+        $this->appendToNavbar("\t \t \t<ul class='nav navbar-nav navbar-right'> \n");
+        $this->appendSideMenuItensToNavbar();
+        $this->appendToNavbar("\t \t \t</ul> \n");
+
         $this->appendToNavbar("\t \t </div> \n");
         $this->appendToNavbar("\t </div> \n");
         $this->appendToNavbar("</div> \n");
@@ -62,9 +64,13 @@ class NavbarBuilder implements IHtmlBuilder
 
     private function appendSideMenuItensToNavbar()
     {
-        $logoutPageUrl = Config::getProjectRootUrl() . 'Layout' . '/logout' . '.php';
-        $this->appendToNavbar("\t \t \t<ul class='nav navbar-nav navbar-right'> \n");
-        $this->appendToNavbar("\t\t\t\t<li> <a href='{$logoutPageUrl}'><span class=\"glyphicon glyphicon-log-out\"></span> Logout </a> </li>\n");
-        $this->appendToNavbar("\t \t \t</ul> \n");
+        if (SessionManager::get('user') != null) {
+            $logoutPageUrl = Config::getProjectRootUrl() . 'Layout' . '/logout' . '.php';
+            $this->appendToNavbar("\t\t\t\t<li> <a href='{$logoutPageUrl}'><span class=\"glyphicon glyphicon-log-out\"></span> Logout </a> </li>\n");
+
+        }else{
+            $indexUrl = 'http://localhost/loja-alura';
+            $this->appendToNavbar("\t\t\t\t<li> <a href='{$indexUrl}'><span class=\"glyphicon glyphicon-log-in\"></span> Login </a> </li>\n");
+        }
     }
 }

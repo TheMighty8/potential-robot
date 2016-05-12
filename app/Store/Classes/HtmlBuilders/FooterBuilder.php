@@ -16,7 +16,7 @@ class FooterBuilder implements IHtmlBuilder
     public function getAsHtml()
     {
         $footerAsHtml =
-            "\t<footer class='footer rodape'> \n"
+            "\t<footer class='footer text-center'> \n"
                 ."\t\t<p>Copyright &copy Batata Productions ". date("Y") . "</p> \n"
             ."\t</footer>\n";
 

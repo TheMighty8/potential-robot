@@ -17,17 +17,19 @@ if (POSTController::verifyPostParameters($_POST)) {
     LoginController::validateLogin($user);
 }
 
-if(LoginController::validateLoggedInUser()){
+if (LoginController::validateLoggedInUser()) {
     PageInformationController::setInformationMessage("Welcome! " . SessionManager::get('user'));
     PageInformationController::setInformationMessageType('success');
     $indexPage = PageInformationController::getInformationMessage();
-}else{
+} else {
     $form = new LoginForm('index.php', 'POST');
 
     $form = $form->getAsHtml();
 
     $indexPage = new HtmlBuilder([$form]);
 }
+
+
 
 echo $indexPage->getAsHtml();
 

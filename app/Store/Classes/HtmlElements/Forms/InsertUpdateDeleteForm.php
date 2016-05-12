@@ -27,7 +27,7 @@ class InsertUpdateDeleteForm extends FormBase implements IHtmlBuilder
     private $submitButtonInput;
 
 
-    public function __construct($action, $method, $productId, $checkboxDefaultCondition)
+    public function __construct($action, $method, $checkboxDefaultCondition, $productId = '')
     {
         $this->action = $action;
         $this->method = $method;

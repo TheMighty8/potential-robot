@@ -7,7 +7,7 @@ use Store\Classes\HtmlBuilders\HtmlBuilder;
 use Store\Classes\HtmlElements\Tables\AllProductsTable;
 
 
-LoginController::verifyLoginPermissions();
+LoginController::verifyLoginPermissions('You need to log in to use this feature', 'danger');
 
 $table = new AllProductsTable("table table-hover table-stripped");
 $table = $table->getAsHtml();

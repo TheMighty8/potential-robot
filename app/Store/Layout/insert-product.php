@@ -8,16 +8,23 @@
 require "../../../vendor/autoload.php";
 
 use Store\Classes\Controller\LoginController;
+use Store\Classes\Controller\POSTController;
 use Store\Classes\HtmlBuilders\HtmlBuilder;
 use Store\Classes\HtmlElements\Forms\InsertUpdateDeleteForm;
 
-LoginController::verifyLoginPermissions();
+if (POSTController::verifyPostParameters($_POST)){
 
-$insertProductForm = new InsertUpdateDeleteForm('placeholder.php', 'POST', '', 'false');
+}
+
+LoginController::verifyLoginPermissions('You need to log in to use this feature', 'danger');
+
+$insertProductForm = new InsertUpdateDeleteForm('insert-product.php', 'POST', 'false');
+
 $insertProductForm = $insertProductForm->getAsHtml();
 
 $insertProductPage = new HtmlBuilder([$insertProductForm]);
 
 echo $insertProductPage->getAsHtml();
+
 
 die();
