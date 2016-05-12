@@ -4,7 +4,7 @@ use Store\Classes\HtmlElements\Inputs\ButtonInput;
 use Store\Classes\HtmlElements\Inputs\DefaultInput;
 use Store\Interfaces\IHtmlBuilder;
 
-class LoginForm implements IHtmlBuilder
+class LoginForm extends FormBase implements IHtmlBuilder
 {
     private $emailInput;
     private $passwordInput;

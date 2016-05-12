@@ -11,5 +11,18 @@ namespace Store\Classes\Controller;
 
 class FormController
 {
-    
+    public static function insert()
+    {
+        
+    }
+
+    public static function update()
+    {
+        
+    }
+
+    public static function remove()
+    {
+        
+    }
 }

@@ -5,6 +5,9 @@
  * Date: 15/04/2016
  * Time: 10:05
  */
+use Store\Classes\Model\Product;
+use Store\Classes\Util\ObjectFactoryService;
+
 class ProductDAO
 {
     private $connection;
@@ -12,7 +15,7 @@ class ProductDAO
 
     function __construct()
     {
-        $this->connection = ObjectFactoryService::getDb();
+        $this->connection = ObjectFactoryService::getDbConnection();
         $this->preparedStatement = GenericPreparedStatementHandler::getInstance();
     }
 
