@@ -4,11 +4,12 @@
   "authors": [
     {
       "name": "Matheus Felicio",
-      "email": "matheus@email.com"
+      "email": "matheus.felicio37@gmail.com"
     }
   ],
   "minimum-stability": "dev",
   "require": {
+    "phpunit/phpunit": "^5.3"
   },
   "autoload": {
     "psr-4": {
